@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class ArticleService {
 
-    constructor() { }
+    constructor(
+        private http: Http
+    ) { }
+    
 }
