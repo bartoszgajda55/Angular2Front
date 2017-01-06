@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, RequestOptions } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -14,6 +14,8 @@ import { UserService } from './services/user.service';
 import { CategoryService } from './services/category.service';
 
 import { AppRoutingModule } from './router/app-routing.module';
+
+import { CustomRequestOptions } from './customrequest.options';
  
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { AppRoutingModule } from './router/app-routing.module';
   providers: [
     ArticleService,
     UserService,
-    CategoryService
+    CategoryService,
+    { provide: RequestOptions, useClass: CustomRequestOptions }
   ],
   bootstrap: [AppComponent]
 })
