@@ -14,8 +14,6 @@ import { UserService } from './services/user.service';
 import { CategoryService } from './services/category.service';
 
 import { AppRoutingModule } from './router/app-routing.module';
-
-import { CustomRequestOptions } from './customrequest.options';
  
 @NgModule({
   declarations: [
@@ -34,8 +32,7 @@ import { CustomRequestOptions } from './customrequest.options';
   providers: [
     ArticleService,
     UserService,
-    CategoryService,
-    { provide: RequestOptions, useClass: CustomRequestOptions }
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
