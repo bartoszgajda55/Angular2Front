@@ -4,7 +4,8 @@ import { ArticleService } from '../../services/article.service';
 
 @Component({
     selector: 'articles',
-    templateUrl: './articles.component.html'
+    templateUrl: './articles.component.html',
+    styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
     articles: Article[];
@@ -15,11 +16,7 @@ export class ArticlesComponent implements OnInit {
         this.articleService.getArticles().subscribe(articles => this.articles = articles);
     }
 
-    Log() {
-        console.log(this.articles);
-    }
-
-    ngOnInit(): void { 
+    ngOnInit() { 
         this.getArticles();
     }
 }
