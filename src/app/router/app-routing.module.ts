@@ -7,7 +7,7 @@ import { CategoriesComponent } from '../components/categories/categories.compone
 import { LoginComponent } from '../components/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: ArticlesComponent },
+  { path: 'articles', component: ArticlesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'login', component: LoginComponent }

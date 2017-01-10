@@ -13,14 +13,9 @@ export class ArticleService {
     
     getArticles(): Observable<Article[]> {
         return this.http.get('http://localhost/app/api/articles')
-                        .map(this.extractData)
+                        .map(data => data.json())
                         .catch(this.handleError);
     }
-
-    private extractData(res: Response) {
-    let body = res.json();
-    return body.data || { };
-  }
 
     private handleError(error: any): Observable<any> {
         console.error('An error occurred', error);
