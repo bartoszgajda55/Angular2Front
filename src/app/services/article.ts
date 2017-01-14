@@ -1,8 +1,9 @@
 export class Article {
-    author_id: number;
-    category_id: number;
-    content: string;
-    id: number;
-    subtitle: string;
-    title: string;
+    constructor(
+    author_id: number,
+    category_id: number,
+    content: string,
+    id: number,
+    subtitle: string,
+    title: string) {}
 }
