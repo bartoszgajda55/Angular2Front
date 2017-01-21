@@ -14,6 +14,7 @@ import { UserService } from './services/user.service';
 import { CategoryService } from './services/category.service';
 
 import { AppRoutingModule } from './router/app-routing.module';
+import { CategoriesGuard } from './router/guards/categories-guard.service';
  
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AppRoutingModule } from './router/app-routing.module';
   providers: [
     ArticleService,
     UserService,
-    CategoryService
+    CategoryService,
+    CategoriesGuard
   ],
   bootstrap: [AppComponent]
 })
