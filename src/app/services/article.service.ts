@@ -11,7 +11,7 @@ export class ArticleService {
     constructor(private http: Http) { }
     
     getArticles(): Observable<Article[]> {
-        return this.http.get('http://localhost/app/api/articles')
+        return this.http.get('http://localhost/app/api/articles.json')
                         .map(data => data.json())
                         .catch(this.handleError);
     }

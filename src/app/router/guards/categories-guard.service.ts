@@ -7,7 +7,7 @@ export class CategoriesGuard implements CanActivate {
     constructor(private router: Router) {}
 
     canActivate() {
-        if(sessionStorage.getItem('status') == 'logged') {
+        if(sessionStorage.getItem('id')) {
             return true;
         } else {
             this.router.navigate(['/login']);

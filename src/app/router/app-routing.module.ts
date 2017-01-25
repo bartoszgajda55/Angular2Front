@@ -9,6 +9,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { CategoriesGuard } from './guards/categories-guard.service';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/articles', pathMatch: 'full'},
   { path: 'articles', component: ArticlesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'categories', component: CategoriesComponent, canActivate: [CategoriesGuard] },

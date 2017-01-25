@@ -18,12 +18,13 @@ export class LoginComponent implements OnInit {
     ngOnInit() { }
 
     logIn(email: string, password: string): void {
-        this.userService.logIn(email, password).subscribe(status => {
-            sessionStorage.setItem('status', status['status']);
-            if(sessionStorage.getItem('status') == 'logged') {
+        this.userService.logIn(email, password).subscribe(response => {
+            if(response['success']) {
+                window.sessionStorage.setItem('id', response['id']);
+                window.sessionStorage.setItem('token', response['token']);
                 this.router.navigate(['/categories']);
             } else {
-                alert('Wrong email or password');
+                alert('false')
             }
         });
     }

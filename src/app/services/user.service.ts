@@ -13,7 +13,7 @@ export class UserService {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.post('http://localhost/app/api/users', {'email': email, 'password': password}, options)
+        return this.http.post('http://localhost/app/api/users/token.json', {'email': email, 'password': password}, options)
                         .map(data => data.json())
                         .catch(this.handleError);
     }
